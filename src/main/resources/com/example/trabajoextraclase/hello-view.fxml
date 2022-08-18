@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.trabajoextraclase.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView layoutX="7.0" layoutY="15.0" prefHeight="475.0" prefWidth="898.0">
+        <columns>
+          <TableColumn prefWidth="79.19997882843018" text="Carne" />
+          <TableColumn prefWidth="127.20001220703125" text="Nombre y apellidos" />
+            <TableColumn prefWidth="74.39996337890625" text="correo" />
+            <TableColumn prefWidth="67.20001220703125" text="Telefono" />
+            <TableColumn prefWidth="75.0" text="Nickname" />
+            <TableColumn prefWidth="48.79998779296875" text="T.E" />
+            <TableColumn prefWidth="72.0" text="P.Examenes" />
+            <TableColumn prefWidth="62.39990234375" text="P.Quices" />
+            <TableColumn prefWidth="61.60003662109375" text="P.Tareas" />
+            <TableColumn prefWidth="75.0" text="Proyecto1" />
+            <TableColumn prefWidth="75.0" text="Proyecto2" />
+            <TableColumn prefWidth="75.0" text="Proyecto3" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
