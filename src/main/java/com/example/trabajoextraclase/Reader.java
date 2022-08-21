@@ -1,4 +1,8 @@
 package com.example.trabajoextraclase;
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.io.*;
 
 public class Reader {
@@ -18,8 +22,13 @@ public class Reader {
             while((line = reader.readLine()) != null) {
 
                 String[] row = line.split(",");
+                //add a la lista (new Student(row[0], row[1].......)
                 //String[] row = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
 //use this if your values already contain commas
+
+                //ObservableList<Estudiante> data = getListEstudiantes()
+                //private ObservableList<Estudiante> data;
+
                 for(String index : row) {
                     System.out.printf("%-10s", index);
                 }
