@@ -4,7 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.io.*;
-
+//codigo tomado de: https://www.youtube.com/watch?v=zKDmzKaAQro&t=1s
 public class Reader {
 
     public void  Lector () {

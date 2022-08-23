@@ -1,16 +1,15 @@
 package com.example.trabajoextraclase;
 
 public class EstudianteB extends Estudiante{
-    int notaP1;
-    int notaP2;
-    int notaP3;
 
-    public EstudianteB(String nombre, int nota1, int nota2,int nota3) {
-            super(nombre);
-            this.notaP1 = notaP1;
-            this.notaP2 = notaP2;
-            this.notaP3 =notaP3;
+    public EstudianteB(int carne, String nombre,String email,int numero,String nickname,
+                       String tipo, int Pexamenes, int Pquices, int Ptareas, int Proyecto1,int Proyecto2,int Proyecto3) {
+            super(carne, nombre, email, numero, nickname, tipo, Pexamenes, Pquices, Ptareas, Proyecto1, Proyecto2, Proyecto3);
+
     }
     public int promedio_Proyectos(){
-        return (this.notaP1 + this.notaP2+ this.notaP3)/3;}
+        return ((getProyecto1nota()+getProyecto2nota()+getProyecto3nota())/3);}
+    public String mostrar_promedio(){
+        return ( "El promedio de la nota de los estudiantes B es: "+ this.promedio_Proyectos());
+    }
 }

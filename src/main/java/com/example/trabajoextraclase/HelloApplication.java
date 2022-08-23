@@ -14,28 +14,28 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-
+//codigo tomado de: https://docs.oracle.com/javafx/2/ui_controls/table-view.htm
 public class HelloApplication extends Application {
 
     private TableView<Estudiante> table = new TableView<Estudiante>();
     private Reader red= new Reader();
     private final ObservableList<Estudiante> data =
             FXCollections.observableArrayList(
-                    new Estudiante(2022144358, "Luis Guzman", "jacob.smith@example.com",72250291,
-                            "Luisguz23","A",80,90,70,65,85,90),
-                    new Estudiante(2022144358, "Luis Guzman", "jacob.smith@example.com",72250291,
-                            "Luisguz23","A",80,90,70,65,85,90),
-                    new Estudiante(2022144358, "Luis Guzman", "jacob.smith@example.com",72250291,
-                            "Luisguz23","A",80,90,70,65,85,90),
-                    new Estudiante(2022144358, "Luis Guzman", "jacob.smith@example.com",72250291,
-                            "Luisguz23","A",80,90,70,65,85,90),
-                    new Estudiante(2022144358, "Luis Guzman", "jacob.smith@example.com",72250291,
-                            "Luisguz23","A",80,90,70,65,85,90)
+                    new Estudiante(20220022,"Tony Stark","tony@starkinduestries.com",
+                            86860000,"ironman","A",99,98,95,80,85,90),
+                    new Estudiante(20221133,"Din Djarin","mando@mandalore.com",
+                            87878787,"mando","B",90,83,87,92,94,81)
             );
 
     public static void main(String[] args) {
         Reader readcsv = new Reader();
         readcsv.Lector();
+        EstudianteA promedioA= new EstudianteA(2022144358, "Luis Guzman", "jacob.smith@example.com",72250291,
+                "Luisguz23","A",80,90,70,65,85,90);
+        System.out.println(promedioA.promedio());
+        EstudianteB promedioB= new EstudianteB(20221133,"Din Djarin","mando@mandalore.com",
+                87878787,"mando","B",90,83,87,92,94,81);
+        System.out.println(promedioB.mostrar_promedio());
         launch(args);
     }
 
@@ -43,35 +43,68 @@ public class HelloApplication extends Application {
     public void start(Stage stage) {
         Scene scene = new Scene(new Group());
         stage.setTitle("Table View Sample");
-        stage.setWidth(450);
-        stage.setHeight(500);
+        stage.setWidth(1380);
+        stage.setHeight(480);
 
-        final Label label = new Label("Address Book");
+        final Label label = new Label("Estudiantes");
         label.setFont(new Font("Arial", 20));
 
         table.setEditable(true);
 
-        TableColumn firstNameCol = new TableColumn("Carne");
-        firstNameCol.setMinWidth(100);
-        firstNameCol.setCellValueFactory(
-                new PropertyValueFactory<Estudiante, String>("carne"));
+        TableColumn CarneCol = new TableColumn("Carne");
+        CarneCol.setMinWidth(100);
+        CarneCol.setCellValueFactory(
+                new PropertyValueFactory<Estudiante, String>("Carne"));
 
-        TableColumn lastNameCol = new TableColumn("Name");
-        lastNameCol.setMinWidth(100);
-        lastNameCol.setCellValueFactory(
+        TableColumn NameCol = new TableColumn("Nombre");
+        NameCol.setMinWidth(150);
+        NameCol.setCellValueFactory(
                 new PropertyValueFactory<Estudiante, String>("Nombre"));
 
         TableColumn emailCol = new TableColumn("Email");
         emailCol.setMinWidth(200);
         emailCol.setCellValueFactory(
-                new PropertyValueFactory<Estudiante, String>("email"));
+                new PropertyValueFactory<Estudiante, String>("Email"));
 
         TableColumn TelefonoCol = new TableColumn("Telefono");
-        TelefonoCol.setMinWidth(200);
-        TelefonoCol.setCellValueFactory( new PropertyValueFactory<Estudiante, Integer>("numero"));
+        TelefonoCol.setMinWidth(100);
+        TelefonoCol.setCellValueFactory( new PropertyValueFactory<Estudiante, Integer>("Numero"));
+
+        TableColumn NicknameCol = new TableColumn("Nickname");
+        NicknameCol.setMinWidth(100);
+        NicknameCol.setCellValueFactory(new PropertyValueFactory<Estudiante, String>("Nickname"));
+
+        TableColumn TipoCol = new TableColumn("Tipo");
+        TipoCol.setMinWidth(50);
+        TipoCol.setCellValueFactory(new PropertyValueFactory<Estudiante,String>("Tipo"));
+
+        TableColumn ExamenCol = new TableColumn("Pexamenes");
+        ExamenCol.setMinWidth(100);
+        ExamenCol.setCellValueFactory(new PropertyValueFactory<Estudiante, Integer>("Pexamenes"));
+
+        TableColumn QuicesCol = new TableColumn("Pquices");
+        QuicesCol.setMinWidth(100);
+        QuicesCol.setCellValueFactory(new PropertyValueFactory<Estudiante,Integer>("Pquices"));
+
+        TableColumn TareasCol = new TableColumn("Ptareas");
+        TareasCol.setMinWidth(100);
+        TareasCol.setCellValueFactory(new PropertyValueFactory<Estudiante, Integer>("Ptareas"));
+
+        TableColumn Proyecto1Col = new TableColumn("Proyecto1");
+        Proyecto1Col.setMinWidth(100);
+        Proyecto1Col.setCellValueFactory(new PropertyValueFactory<Estudiante, Integer>("Proyecto1"));
+
+        TableColumn Proyecto2Col = new TableColumn("Proyecto2");
+        Proyecto2Col.setMinWidth(100);
+        Proyecto2Col.setCellValueFactory(new PropertyValueFactory<Estudiante, Integer>("Proyecto2"));
+
+        TableColumn Proyecto3Col = new TableColumn("Proyecto3");
+        Proyecto3Col.setMinWidth(100);
+        Proyecto3Col.setCellValueFactory(new PropertyValueFactory<Estudiante, Integer>("Proyecto3"));
 
         table.setItems(data);
-        table.getColumns().addAll(firstNameCol, lastNameCol, emailCol);
+        table.getColumns().addAll(CarneCol, NameCol, emailCol, TelefonoCol,NicknameCol,TipoCol,
+                ExamenCol,QuicesCol, TareasCol,Proyecto1Col, Proyecto2Col, Proyecto3Col);
 
         final VBox vbox = new VBox();
         vbox.setSpacing(5);
